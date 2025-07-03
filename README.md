@@ -4,7 +4,7 @@
 
 ## 1. Clone the central repository
 
-Open your terminal or Git Bash. Navigate to the directory where you want to store your project files, and then run:
+Open your terminal. Navigate to the directory where you want to store your project files, and then run:
 git clone https://github.com/gtechspace/farmyetu.git
 
 ## 2. Navigate into the Project Directory
