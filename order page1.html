@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FARM YETU</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>FARM YETU </h1>
+    <p>FRESH IS TASTY!</p>
+    <script>src="Order.js"</script>
+  </header>
+
+  <section id="products">
+    <h2>OUR PRODUCTS</h2>
+    <div class="product-card">
+        <image src="IRISH POTATOES.Jpeg" alt="IRISH POTATOES">
+      <label>
+        <h3>IRISH POTATOES</h3>
+        <p>Ksh 120 per kg</p>
+        <button>Add to cart</button>
+        
+        <input type="number" id = "counter" min="0" name="counter" value="0" step ="1">
+      </label>
+</div>
+
+    <div>
+        <img src="OYSTERMUSHROOM.Jpeg" alt="OYSTER MUSHROOMS">
+      <label>
+
+        <h4>OYSTER MUSHROOMS</h4>
+        <p>Ksh 250 per kg</p>
+        <button>Add to cart</button>
+        <input type="number" id = "counter" min="0" name="counter" value="0" step ="1">
+
+      </label>
+    </div>
+    <div class="product">
+        <img src="HONEY2.jpeg" alt="HONEY">
+      <label>
+        <h5>HONEY</h5>
+        <p>Ksh 1000 per kg</p>
+        <button>Add to cart</button>
+    <input type="number" id = "counter" min="0" name="counter" value="0" step ="1">
+      </label>
+
+      <div>
+        <img src="PAWPAW.jpeg" alt="PAWPAW">
+        <h6>PAWPAW</h6>
+        <P>Ksh 150</P>
+        <div>
+            <img src="PASSION.jpeg" alt="PASSION">
+            <h7>PASSION FRUIT-YELLOW</h7>
+            <p>Ksh 100</p>
+            <button>Add to cart</button>
+<input type="number" id = "counter" min="0" name="counter" value="0" step ="1">
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="customer">
+    <h2>Personal Details</h2>
+    <input type="text" placeholder="Full Name" id="name" required>
+    <input type="email" placeholder="Email Address" id="email" required>
+    <input type="tel" placeholder="Phone Number (start with +254)" id="phone" required>
+  </section>
+
+  <section id="delivery">
+    <h2>Delivery Details</h2>
+    <input type="text" placeholder="Street Address" id="street" required>
+    <input type="text" placeholder="City" id="city" required>
+    <input type="text" placeholder="State/County" id="state" required>
+    <input type="text" placeholder="Postal Code" id="postal" required>
+    <input type="text" placeholder="Country" id="country" required>
+  </section>
+
+  <section id="billing-toggle">
+    <label>
+      <input type="checkbox" id="sameAsDelivery" checked onchange="toggleBilling()"> Billing address same as delivery
+    </label>
+  </section>
+
+  <section id="billingDetails" style="display: STATIC;">
+    <h2>Billing Details</h2>
+    <input type="text" placeholder="Street Address" id="billingStreet">
+    <input type="text" placeholder="City" id="billingCity">
+    <input type="text" placeholder="State/County" id="billingState">
+    <input type="text" placeholder="Postal Code" id="billingPostal">
+    <input type="text" placeholder="Country" id="billingCountry">
+  </section>
+
+  <section id="summary">
+    <h2>Cart Summary</h2>
+    <ul id="cartItems"></ul>
+    <p id="total"></p>
+  </section>
+
+  <section id="payment">
+    <h2>Payment Method</h2>
+    <select id="paymentMethod" onchange="togglePaymentFields()">
+      <option value="mobileMoney">Mobile Money (M-Pesa)</option>
+      <option value="creditCard">Credit Card</option>
+    </select>
+
+    <div id="mobileMoneyFields">
+      <label>
+        M-Pesa Phone Number:
+        <input type="tel" id="mpesaNumber" placeholder="e.g. 07XXXXXXXX">
+      </label>
+    </div>
+
+    <div id="creditCardFields" style="display: none;">
+      <label>
+        Card Number:
+        <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456">
+      </label>
+      <label>
+        Expiry Date:
+        <input type="month" id="expiry">
+      </label>
+      <label>
+        CVV:
+        <input type="text" id="cvv" placeholder="123" maxlength="4">
+      </label>
+    </div>
+  </section>
+
+  <section>
+    <button onclick="placeOrder()">Place Order</button>
+    <p id="orderError" style="color: red; font-weight: bold; display: none;"></p>
+  </section>
+
+  <div id="popup" class="popup" style="display: none;">
+    <div class="popup-content">
+      <h2>Order Placed Successfully!</h2>
+      <p>Thank you, <span id="popupName"></span>!<br>
+      Please check <strong><span id="popupEmail"></span></strong> for confirmation details.</p>
+      <button onclick="closePopup()">Close</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
