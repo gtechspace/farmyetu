@@ -1,0 +1,136 @@
+/* Reset & Fonts */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background-color: #f8f9f3;
+}
+
+/* Header */
+.header {
+  background-color: #6f9e6b;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  height: 60px;
+}
+
+.nav a {
+  margin-left: 20px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+}
+
+/* Product Section */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.product-card {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  max-width: 300px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: scale(1.03);
+}
+
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.product-card h3 {
+  color: #3a5734;
+  margin-top: 1rem;
+}
+
+.price {
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+  color: #6f9e6b;
+}
+
+.add-to-cart {
+  background-color: #6f9e6b;
+  color: white;
+  padding: 0.7rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.add-to-cart:hover {
+  background-color: #587f55;
+}
+/* footer */
+.footer {
+  background-color: #3a5734;
+  color: white;
+  padding: 2rem 1rem;
+  margin-top: 2rem;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+.footer-links {
+  margin-bottom: 1rem;
+}
+
+.footer-links a {
+  color: #d7e9d5;
+  margin: 0 1rem;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.social-media a {
+  color: white;
+  margin: 0 0.5rem;
+  font-size: 1.2rem;
+  transition: color 0.3s;
+}
+
+.social-media a:hover {
+  color: #a8db8d;
+}
+
+.copyright {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: #c0cfc2;
+}
