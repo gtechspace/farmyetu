@@ -134,3 +134,76 @@ body {
   font-size: 0.85rem;
   color: #c0cfc2;
 }
+/* cart.html */
+  body {
+    background-color: #f4f9f4;
+    font-family: 'Segoe UI', sans-serif;
+    padding: 40px;
+    margin: 0;
+    color: #2d4739;
+  }
+
+  h1 {
+    text-align: center;
+    color: #3b5a44;
+    margin-bottom: 30px;
+  }
+
+  table {
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  th, td {
+    border: 1px solid #cce3d3;
+    padding: 14px;
+    text-align: center;
+  }
+
+  th {
+    background-color: #dcefe7;
+    color: #2d4739;
+    font-weight: 600;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f9fefb;
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+  }
+
+  .cart-btn {
+    padding: 12px 20px;
+    background-color: #6ab04c;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+
+  .cart-btn:hover {
+    background-color: #478d3c;
+  }
+
+  .cart-btn.back {
+    background-color: #a3c9a8;
+  }
+
+  .cart-btn.back:hover {
+    background-color: #86b289;
+  }
+
