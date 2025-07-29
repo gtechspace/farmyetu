@@ -67,8 +67,44 @@ body {
 }
 
 /* Contact Info */
-.contact-info {
+
+.contact-left,
+.contact-right {
   flex: 1;
+  min-width: 300px;
+}
+.contact-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-top: 30px;
+  justify-content: space-between;
+}
+.contact-right form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contact-right input,
+.contact-right textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+.contact-right button {
+  background-color: #28a745;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-right button:hover {
+  background-color: #218838;
 }
 .contact-info h2 {
   color: #2e7d32;
@@ -91,6 +127,26 @@ body {
 .whatsapp-button:hover {
   background-color: #20b358;
 }
+
+.tiktok-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #010101; /* TikTok black */
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.tiktok-button:hover {
+  background-color: #fdfafb;
+  color: #fff;rgb(255, 253, 254)rgb(255, 253, 254)rgb(243, 237, 239)
+  border-color: #69c9d0; /* TikTok cyan */
+  box-shadow: 0 0 10px rgba(105, 201, 208, 0.6);
+}
+
+
 .instagram-button {
   display: inline-block;
   margin-top: 1rem;
@@ -123,20 +179,6 @@ body {
 }
 .facebook-button:hover {
   background-color: #0e63d8;
-}
-
-.x-button {
-  display: inline-block;
-  margin-top: 1rem;
-  background-color: #000;
-  color: white;
-  padding: 0.7rem 1.2rem;
-  border-radius: 5px;
-  text-decoration: none;
-  transition: background 0.3s;
-}
-.x-button:hover {
-  background-color: #333;
 }
 
 /* Contact Form */
