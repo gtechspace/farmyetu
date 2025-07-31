@@ -1,0 +1,120 @@
+html, body{height: 100%;
+margin:0;
+overflow-y:auto/*enable vertical scrolling*/}
+
+.header{
+    position:sticky;
+    background-color:green;
+    color: white
+    padding 20px;
+    text-align:center;
+    border-radius:0 20px;
+    font-size: 2rem;
+    border-radius:20px; 
+    margin-bottom :30px;
+  }
+  .body {
+  position: absolute;
+  font-family: 'Times New Roman', Times, serif, sans-serif;
+  background-color: rgb(251, 253, 251);
+  padding: 20px;
+}
+
+
+
+input, select {
+  display: inline-block;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 10px;
+  width: 300px;
+  max-width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color :blue;
+  color: black;
+  border: 2px solid black;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: color #24a024;
+}
+
+cartItems {
+  list-style: none;
+  padding-left: 0;
+}
+
+cartItems li {
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+total {
+  font-weight: bold;
+  color: #444;
+  margin-top: 20px;
+}
+
+#truck{
+position:relative;
+width:120px;
+height:70px;
+background:url() no-repeat center;
+background-size:contain;
+transition:transform 2s ease-in-out;
+margin-top: 30px;}
+
+.move{transform:translateX(500px);}
+#place-order:hover{background-color: #24a024;}
+
+#message{
+    margin-top: 20px;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 14px;
+color: #24a024;
+font-weight: bold;
+}
+
+
+.img-footer{
+background-color:green;
+position:sticky;
+bottom: 0;
+width: 100%;
+text-align: center;
+padding: 10px 0;
+box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+z-index: 1000;
+animation:fadeIn 0.8s ease-in;
+}
+
+.img-footer img{
+height: 40px;
+margin: 0 10px;
+transition:transform 0.3s ease,filter 0.3s ease;}
+
+.img-footer img:hover{
+  transform: scale(1.1);
+  filter:brightness(1.2);
+  cursor: pointer;
+}
+
+/*mobile responsiveness*/
+@media (max-width:500px){
+  .img-footer img{height:30px;
+  margin:0 5px;}
+}
+
+/*smooth fade-in animation*/
+@keyframes fadeIn{
+  from{opacity:0;transform :translateY(20px);}
+to{opacity: 1;transform :translateY(0);}}
+
+
