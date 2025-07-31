@@ -3,64 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <title>FARM YETU</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="orderpage.css">
 </head>
 <body>
 
-  <header>
-    <h1>FARM YETU </h1>
-    <p>FRESH IS TASTY!</p>
-    <script>src="Order.js"</script>
-  </header>
-
-  <section id="products">
-    <h2>OUR PRODUCTS</h2>
-    <div class="product-card">
-        <image src="IRISH POTATOES.Jpeg" alt="IRISH POTATOES">
-      <label>
-        <h3>IRISH POTATOES</h3>
-        <p>Ksh 120 per kg</p>
-        <button>Add to cart</button>
-        
-        <input type="number" id = "counter" min="0" name="counter" value="0" step ="1">
-      </label>
-</div>
-
-    <div>
-        <img src="OYSTERMUSHROOM.Jpeg" alt="OYSTER MUSHROOMS">
-      <label>
-
-        <h4>OYSTER MUSHROOMS</h4>
-        <p>Ksh 250 per kg</p>
-        <button>Add to cart</button>
-        <input type="number" id = "counter" min="0" name="counter" value="0" step ="1">
-
-      </label>
-    </div>
-    <div class="product">
-        <img src="HONEY2.jpeg" alt="HONEY">
-      <label>
-        <h5>HONEY</h5>
-        <p>Ksh 1000 per kg</p>
-        <button>Add to cart</button>
-    <input type="number" id = "counter" min="0" name="counter" value="0" step ="1">
-      </label>
-
-      <div>
-        <img src="PAWPAW.jpeg" alt="PAWPAW">
-        <h6>PAWPAW</h6>
-        <P>Ksh 150</P>
-        <div>
-            <img src="PASSION.jpeg" alt="PASSION">
-            <h7>PASSION FRUIT-YELLOW</h7>
-            <p>Ksh 100</p>
-            <button>Add to cart</button>
-<input type="number" id = "counter" min="0" name="counter" value="0" step ="1">
-        </div>
-
-      </div>
-    </div>
-  </section>
 
   <section id="customer">
     <h2>Personal Details</h2>
@@ -93,17 +39,11 @@
     <input type="text" placeholder="Country" id="billingCountry">
   </section>
 
-  <section id="summary">
-    <h2>Cart Summary</h2>
-    <ul id="cartItems"></ul>
-    <p id="total"></p>
-  </section>
-
   <section id="payment">
     <h2>Payment Method</h2>
     <select id="paymentMethod" onchange="togglePaymentFields()">
       <option value="mobileMoney">Mobile Money (M-Pesa)</option>
-      <option value="creditCard">Credit Card</option>
+      <!-- <option value="creditCard">Credit Card</option> -->
     </select>
 
     <div id="mobileMoneyFields">
@@ -130,7 +70,7 @@
   </section>
 
   <section>
-    <button onclick="placeOrder()">Place Order</button>
+    <button class="placeOrder">Place Order</button>
     <p id="orderError" style="color: red; font-weight: bold; display: none;"></p>
   </section>
 
@@ -139,10 +79,10 @@
       <h2>Order Placed Successfully!</h2>
       <p>Thank you, <span id="popupName"></span>!<br>
       Please check <strong><span id="popupEmail"></span></strong> for confirmation details.</p>
-      <button onclick="closePopup()">Close</button>
+      <button class="closePopup">Close</button>
     </div>
   </div>
 
-  <script src="script.js"></script>
+  <script src="orderpage.js"></script>
 </body>
 </html>
