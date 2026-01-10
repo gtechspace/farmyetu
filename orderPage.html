@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width",initialscale="1.0">
+  <title>FARM YETU</title>
+  
+  <link rel="stylesheet" href="orderPage.css">
+<link src="script1.js"> </script>
+</head>
+<body>
+  <main>
+  <div style="height:45px; background :white;">
+  </div>
+  <div class="header">
+    <p id="order-page-header">For fresh farm harvest,best delivery days are Wednesday and Friday.Kindly place your orders before noon.</p>
+  </div>
+  <div class="order-page-container">
+  <form id="myForm">
+    <h2>Billing Details</h2>
+    <input type="text" placeholder="First name" id="first" required>
+    <input type="text" placeholder="Last name"  id="last" required>
+    <input type="email" placeholder="Email Address" id="email" required>
+    <input type="tel" placeholder="Phone Number (start with +254)" id="phone" required>
+    <input type="text" placeholder="Street Address" id="street" required>
+    <input type="text" placeholder="City" id="city" required>
+    <Label for="county"><strong>County</strong></Label>
+      <select name = "county"id="county">
+      <option value="">--Select a County--</option>
+      <option value = "Kiambu">Kiambu</option>
+      <option value = "Nairobi">Nairobi</option>
+      <option value = "Embu">Embu</option>
+      <option value = "Machakos">Machakos</option>
+      <option value = "Kilifi">Kilifi</option>
+      <option value = "Mombasa">Mombasa</option>
+      <option value = "Meru">Meru</option>
+      </select>
+    <input type="text" placeholder="Postal Code" id="postal" required>
+  <input type ="text" placeholder ="KENYA" readonly>
+      <input type="checkbox"id="sameAsDelivery"checked onchange="toggleBilling()">Billing same as delivery
+      <br><button type="button" id="submit-order">Order on Whatsapp</button></br>
+  </form>
+  <div id="messageBox" style="margin-top:10px;
+  color:green;"></div>
+
+
+  <section class="payment">
+    <h2>Payment Method</h2>
+    <!-- <select id="paymentMethod" onchange="togglePaymentFields()">
+      <option value="kcb">KCB</option>
+      <option value="mobileMoney">Mobile Money (M-Pesa)</option>
+      <option value="creditCard">Credit Card</option>
+    </select>
+    <input type="values" placeholder="CVV"> -->
+
+    <div id="mobileMoneyFields">
+      <label>M-Pesa Phone Number: </label>
+        <input type="tel" id="mpesaNumber" placeholder="e.g. 07XXXXXXXX"><br>
+     
+       <label>Total Amount: </label>
+       <span id ="total-amount" placeholder="Total Amount"></span><br>
+
+    <button id="place-order">Place Order</button>
+    </div>
+
+    <div id="creditCardFields" style="display:none">
+      <label>
+        Card Number:
+        <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456">
+      </label>
+      <label>
+        Expiry Date:
+        <input type="month" id="expiry">
+      </label>
+      <div>
+        CVV:
+        <input type="text" id="cvv" placeholder="12345678" maxlength="8">
+        
+       
+   
+    </div>
+ 
+    
+  </section>
+  
+  <!-- insert instasend button -->
+  <!-- <div>
+    <button class="intaSendPayButton" data-amount="10" data-currency="KES" data-email="joe@doe.com" data-first_name="JOE" data-last_name="DOE" data-country="KE">Pay Now</button>
+  </div> -->
+  <div id="truck"></div>
+  <p id="message"></p>
+</div>    
+<div class="img-footer">
+  <p>NB:Cost matters with area of delivery.You can also order from:</p>
+
+<img src = "Images/Tiktok.png" class="socialmedia-icons" alt="TIKTOK">
+<img src="images/FACEBOOK.png" class="socialmedia-icons" alt ="FACEBOOK">
+<img src="images/INSTAGRAM.jpeg" class="socialmedia-icons" alt ="INSTAGTRAM">
+</div>
+</main>
+<script src="https://unpkg.com/intasend-inlinejs-sdk@4.0.7/build/intasend-inline.js"></script>
+<script type="module" src="env.js"></script>
+<!-- <script src="productpage.js"></script> -->
+<script type="module" src="orderPage.js"></script>
+</body>
+</html>
