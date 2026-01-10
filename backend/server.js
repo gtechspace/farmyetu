@@ -9,14 +9,13 @@ const PORT = 5000
 
 app.use(express.json())
 
-const consumerKey ="NHDpZUxhNRDd_WKgMIEIrJ2mB50a";
-const consumerSecret ="pyPOVGZlTW1fmElJY9vW0PJOh4ka";
+
 const BASE_URL = "https://uat.buni.kcbgroup.com";
 //const BASE_URL = "https://uat.buni.kcbgroup.com"; 
 
 // Generate access token
 async function getAccessToken() {
-  const credentials = Buffer.from(`${consumerKey}:${consumerSecret}`).toString('base64');
+  const credentials = Buffer.from(process.env(`${CONSUMER_KEY}:${CONSUMER_SECRET}`)).toString('base64');
   
   try{
   const response = await fetch(`${BASE_URL}/token?grant_type=client_credentials`, {
