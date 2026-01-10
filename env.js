@@ -1,0 +1,5 @@
+const whatsappToken="EAALZCK5ZCr1h0BQSeRZBN3mhC8SFOYf8ny3LFe7U36spneEQ9qAlSPgGjlykoiRqu7SZA0AaC2B46sg1tW9yxZAZADVj57wMMHpMK8lE62FV4jM6NBaafVQQPKWRkNr4rVyng3CDoKY9UW2pMJJ0z5dmrYuYAAEt3VWRF8tLGvQJz6otYNPt1JZBZCZBqOpOZClmX9uZBKctKY9wIdZB5ZAxyj65sbnQe7yxEV9POIrKJVfTC"
+
+export default function passToken(){
+    return whatsappToken
+}

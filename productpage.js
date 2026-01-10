@@ -20,6 +20,14 @@ function addToCart(button) {
   window.location.href = "cart.html";
 }
 
+//main totalCell
+const totalRow = document.createElement("tr");
+
+//totalCell after row is deleted
+const totalCell = document.createElement("tr")
+
+//create an array to hold the stored products
+let orders = []
 
 window.addEventListener("DOMContentLoaded", () => {
   const tableBody = document.querySelector("#cart-table tbody");
@@ -29,8 +37,9 @@ window.addEventListener("DOMContentLoaded", () => {
 
   let total = 0;
 
-  cartItems.forEach(item => {
+  cartItems.forEach((item) => {
     const row = document.createElement("tr");
+    row.setAttribute("class", "cart-row")
 
     const nameCell = document.createElement("td");
     nameCell.textContent = item.name;
@@ -41,22 +50,96 @@ window.addEventListener("DOMContentLoaded", () => {
     const priceCell = document.createElement("td");
     priceCell.textContent = `KES ${item.price.toFixed(2)}`;
 
+    //create a delete button to delete rows in the cart
+    const deleteItem = document.createElement("button")
+    deleteItem.textContent = "X"
+
     const subtotal = item.quantity * item.price;
     const subtotalCell = document.createElement("td");
     subtotalCell.textContent = `KES ${subtotal.toFixed(2)}`;
 
     total += subtotal;
 
+    console.log(item)
+
+
+
     row.appendChild(nameCell);
     row.appendChild(quantityCell);
     row.appendChild(priceCell);
     row.appendChild(subtotalCell);
+    row.appendChild(deleteItem)
 
     tableBody.appendChild(row);
+
+    let orderedItems = {
+      productName: item.name,
+      quantity: item.quantity,
+      price: item.price,
+      total: total
+    }
+
+    //save order in the localStorage to be retrieved in orderPage
+    orders.push(orderedItems)
+    localStorage.setItem("order", JSON.stringify(orders))
+
+    //delete item from cart and save remaining items in local storage
+    deleteItem.addEventListener("click", () => {
+      totalRow.innerHTML = ""
+      //localStorage.clear()
+
+      tableBody.removeChild(row)
+      let subTotal = item.quantity * item.price
+      total -= subTotal
+
+      let newOrder = []
+
+      cartItems.filter(i => {
+        console.log(item.name)
+        console.log(i.name)
+        if (item.name !== i.name) {
+          localStorage.removeItem(i)
+          localStorage.clear()
+
+          orderedItems = {
+            productName: i.name,
+            quantity: i.quantity,
+            price: i.price,
+            total: total
+          }
+
+          newOrder.push(orderedItems)
+          
+          localStorage.setItem("order", JSON.stringify(newOrder))
+        }
+      })
+
+      totalCell.innerHTML = `
+      <td colspan="3"><strong>Total</strong></td>
+      <td><strong>KES ${total.toFixed(2)}</strong></td>
+      `;
+      tableBody.appendChild(totalCell);
+
+      //   order = [
+      //     {
+      //     productName: item.productName,
+      //     quantity: item.quantity,
+      //     price: item.price,
+      //     total: total
+      //   }
+      // ]
+
+
+      //   localStorage.setItem("order", JSON.stringify(order))
+
+    })
+
+
   });
 
 
-  const totalRow = document.createElement("tr");
+
+
   totalRow.innerHTML = `
     <td colspan="3"><strong>Total</strong></td>
     <td><strong>KES ${total.toFixed(2)}</strong></td>
